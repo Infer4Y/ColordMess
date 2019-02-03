@@ -1,0 +1,33 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "colormess:jellym",
+    "textures": {
+      "colored": "colormess:blocks/jelly"
+    }
+  },
+  "variants": {
+    "normal": {
+      "model": "cube_all"
+    },
+    "inventory": {
+      "model": "cube_all"
+    },
+    "color" : {
+  "white": {},
+  "green": {},
+  "black": {},
+  "yellow": {},
+  "lightblue": {},
+  "red": {},
+  "blue": {},
+  "purple": {},
+  "lime": {},
+  "brown": {},
+  "silver": {},
+  "magenta": {},
+  "gray": {},
+  "orange": {}
+  }
+}
+}
