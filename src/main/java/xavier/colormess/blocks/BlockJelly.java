@@ -36,7 +36,7 @@ public class BlockJelly extends BlockColored {
     }
 
     public Item createItemBlock() {
-        return new ItemBlock(this).setRegistryName(getRegistryName());
+        return new ItemBlock(this).setHasSubtypes(true).setRegistryName(getRegistryName());
     }
 
 }
