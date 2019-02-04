@@ -10,15 +10,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import xavier.colormess.blocks.BlockJelly;
 
-/**
- * Created by Mary on 2/3/2019.
- */
+
 @SideOnly(Side.CLIENT)
 public class RegColorItem implements IItemColor {
 
 
     @Override
     public int colorMultiplier(ItemStack stack, int tintIndex) {
-        return EnumDyeColor.values()[stack.getItemDamage()].getColorValue();
+        return EnumDyeColor.byMetadata(stack.getMetadata()).getColorValue();
     }
 }
