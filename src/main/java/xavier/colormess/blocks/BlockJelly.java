@@ -60,7 +60,12 @@ public class BlockJelly extends BlockColored {
     }
 
     public Item createItemBlock() {
-        return new ItemBlock(this).setRegistryName(getRegistryName()).setHasSubtypes(true);
+        return new ItemBlock(this){
+            @Override
+            public int getMetadata(int damage) {
+                return damage;
+            }
+        }.setRegistryName(getRegistryName()).setHasSubtypes(true);
     }
 
 }
