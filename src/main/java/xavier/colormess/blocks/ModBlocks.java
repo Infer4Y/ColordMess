@@ -18,7 +18,7 @@ public class ModBlocks {
     }
 
     public static void registerModels() {
-        jelly.registerItemModel(jelly.createItemBlock());
+        jelly.registerItemModel(Item.getItemFromBlock(jelly));
 
     }
 }

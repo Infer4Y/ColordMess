@@ -4,6 +4,8 @@ import net.minecraft.block.BlockColored;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
@@ -23,20 +25,42 @@ public class BlockJelly extends BlockColored {
         setUnlocalizedName(name);
         setRegistryName(name);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-        setDefaultSlipperiness(10.0f);
     }
 
     @Override
     public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT_MIPPED;
+        return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    @Override
+    public boolean isFullBlock(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+        super.onEntityCollidedWithBlock(worldIn, pos, state, entityIn);
+        entityIn.addVelocity(entityIn.motionX*-1, entityIn.motionY*-1, entityIn.motionZ*-1 );
+    }
+
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return super.getStateFromMeta(meta);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return super.getMetaFromState(state);
     }
 
     public void registerItemModel(Item itemBlock) {
-        ColorMess.proxy.registerItemRenderer(itemBlock, 0, name);
+        for (int i = 0; i < 16; i++) {
+            ColorMess.proxy.registerItemRenderer(itemBlock, i, name, "color=".concat(EnumDyeColor.byMetadata(i).getName()));
+        }
     }
 
     public Item createItemBlock() {
-        return new ItemBlock(this).setHasSubtypes(true).setRegistryName(getRegistryName());
+        return new ItemBlock(this).setRegistryName(getRegistryName()).setHasSubtypes(true);
     }
 
 }

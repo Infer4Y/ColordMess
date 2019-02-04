@@ -8,26 +8,34 @@
   },
   "variants": {
     "normal": {
-      "model": "cube_all"
+      "model": "colormess:jellym",
+      "textures": {
+        "colored": "colormess:blocks/jelly"
+      }
     },
     "inventory": {
-      "model": "cube_all"
+      "model": "colormess:jellym",
+      "textures": {
+        "colored": "colormess:blocks/jelly"
+      }
     },
     "color" : {
-  "white": {},
-  "green": {},
-  "black": {},
-  "yellow": {},
-  "lightblue": {},
-  "red": {},
-  "blue": {},
-  "purple": {},
-  "lime": {},
-  "brown": {},
-  "silver": {},
-  "magenta": {},
-  "gray": {},
-  "orange": {}
+      "white": {},
+      "green": {},
+      "black": {},
+      "yellow": {},
+      "light_blue": {},
+      "cyan": {},
+      "pink" : {},
+      "red": {},
+      "blue": {},
+      "purple": {},
+      "lime": {},
+      "brown": {},
+      "silver": {},
+      "magenta": {},
+      "gray": {},
+      "orange": {}
+    }
   }
-}
 }
