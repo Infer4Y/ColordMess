@@ -38,19 +38,19 @@ public class BlockJelly extends BlockColored {
     }
 
     @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isCollidable() {
+        return true;
+    }
+
+    @Override
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
         super.onEntityCollidedWithBlock(worldIn, pos, state, entityIn);
         entityIn.addVelocity(entityIn.motionX*-1, entityIn.motionY*-1, entityIn.motionZ*-1 );
-    }
-
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
-        return super.getStateFromMeta(meta);
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state) {
-        return super.getMetaFromState(state);
     }
 
     public void registerItemModel(Item itemBlock) {
