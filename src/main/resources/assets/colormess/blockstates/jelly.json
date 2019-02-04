@@ -16,7 +16,8 @@
     "inventory": {
       "model": "colormess:jellym",
       "textures": {
-        "colored": "colormess:blocks/jelly"
+        "colored": "colormess:blocks/jelly",
+        "particle": "colormess:blocks/jelly"
       }
     },
     "color" : {

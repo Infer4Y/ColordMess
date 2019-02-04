@@ -69,7 +69,7 @@ public class ColorMess
 
         @SideOnly(Side.CLIENT)
         @SubscribeEvent
-        public void onColorHandlerItem(ColorHandlerEvent.Item event) {
+        public static void onColorHandlerItem(ColorHandlerEvent.Item event) {
             event.getItemColors().registerItemColorHandler(new RegColorItem(), Item.getItemFromBlock(ModBlocks.jelly));
         }
 
