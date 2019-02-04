@@ -1,5 +1,6 @@
 package xavier.colormess.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -72,14 +73,22 @@ public class BlockJelly extends BlockColored {
     }
 
     public Item createItemBlock() {
-        return new ItemColored(this, true){
-            @Override
-            public int getMetadata(int damage) {
-                return damage;
-            }
+        return new JellyBlockItem(this, true){
 
 
-        }.setRegistryName(getRegistryName()).setHasSubtypes(true);
+
+        }.setRegistryName(getRegistryName());
+    }
+
+    private class JellyBlockItem extends ItemColored{
+        public JellyBlockItem(Block block, boolean hasSubtypes) {
+            super(block, hasSubtypes);
+        }
+
+        @Override
+        public int getMetadata(int damage) {
+            return damage;
+        }
     }
 
 }
